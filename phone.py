@@ -8,6 +8,6 @@ class Phone(Field):
     def validate(self, number):
         ''' Simple phone number validation '''
         if not re.match(r"^\+?(\d{10})$", number.strip()):
-            pass
+            raise ValueError("Phone number should contain only digits")
 
         return number
