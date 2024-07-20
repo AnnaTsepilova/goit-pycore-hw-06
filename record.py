@@ -6,7 +6,7 @@ class Record:
         self.name = Name(name)
         self.phones = []
 
-    def add_phone(self, number):
+    def add_phone(self, number) -> None:
         '''Function add phone number to record'''
         self.phones.append(Phone(number))
 
@@ -18,6 +18,7 @@ class Record:
         pass
 
     def find_phone(self, number):
+        '''Search phone in record'''
         result = [n.value for n in self.phones if number == n.value]
         if result:
             return result[0]
