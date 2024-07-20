@@ -10,12 +10,22 @@ class Record:
         '''Function add phone number to record'''
         self.phones.append(Phone(number))
 
-    def remove_phone(self, number):
+    def remove_phone(self, number: str):
         '''Function removes phone number from record'''
-        pass
+        for i, phone in enumerate(self.phones):
+            if str(phone) == str(number):
+                del self.phones[i]
+                return True
+
+        return False
 
     def edit_phone(self, old_number, new_number):
-        pass
+        '''Function change phone number in record'''
+        for i, phone in enumerate(self.phones):
+            if str(phone) == str(old_number):
+                self.phones[i] = Phone(new_number)
+                return True
+        return False
 
     def find_phone(self, number):
         '''Search phone in record'''
