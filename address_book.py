@@ -19,7 +19,7 @@ class AddressBook(UserDict):
         print("Record not found")
         return None
 
-    def delete(self, name: str):
+    def delete(self, name: str) -> bool:
         '''Find and remove record'''
         record = self.find(name)
         if not record:
